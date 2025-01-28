@@ -1,0 +1,20 @@
+#!/bin/bash
+
+
+if [ -z "$1" ]; then
+    echo "enter a .cpp file plz"
+    exit 1
+fi
+
+
+FILE_NAME=$(basename "$1" .cpp)
+
+
+g++ -o "$FILE_NAME" "$1" 
+
+
+if [ $? -eq 0 ]; then
+    ./$FILE_NAME
+else
+    echo "compilation error"
+fi
