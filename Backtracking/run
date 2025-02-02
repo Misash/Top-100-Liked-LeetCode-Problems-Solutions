@@ -7,14 +7,14 @@ if [ -z "$1" ]; then
 fi
 
 
-FILE_NAME=$(basename "$1" .cpp)
+output=$(basename "$1" .cpp)
 
 
-g++ -o "$FILE_NAME" "$1" 
+g++ -o output "$1" 
 
 
 if [ $? -eq 0 ]; then
-    ./$FILE_NAME
+    ./output
 else
     echo "compilation error"
 fi
